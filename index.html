@@ -9,7 +9,7 @@
   <link rel="alternate icon" href="assets/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Manrope:wght@400..700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script>
     // Apply saved theme before paint to avoid a flash
@@ -34,7 +34,11 @@
     <div class="hero-grid" aria-hidden="true"></div>
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-inner">
-      <img class="hero-logo" src="assets/aa-logo-dark.svg" alt="AA logo" width="88" height="88">
+      <div class="hero-photo">
+        <span class="ring" aria-hidden="true"></span>
+        <img id="heroPhoto" src="" alt="" width="168" height="168">
+        <img class="hero-badge" src="assets/aa-logo-dark.svg" alt="" width="40" height="40">
+      </div>
       <p class="eyebrow" data-bind="location"></p>
       <h1 class="hero-name" data-bind="name"></h1>
       <p class="hero-role"><span id="typed"></span><span class="caret" aria-hidden="true"></span></p>
@@ -57,6 +61,11 @@
   <footer class="footer">
     <p>© <span id="year"></span> <span data-bind="name"></span> · Built with plain HTML, CSS &amp; JS · <a href="https://github.com/areebahmed401/my-portfolio">Source</a></p>
   </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close photo">×</button>
+    <figure><img id="lightboxImg" src="" alt=""><figcaption id="lightboxCaption"></figcaption></figure>
+  </div>
 
   <noscript><p class="noscript">This site needs JavaScript to display the CV content.</p></noscript>
   <script src="js/main.js" defer></script>

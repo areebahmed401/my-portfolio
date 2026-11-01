@@ -29,29 +29,64 @@
   const pending = (item) => (item.pending ? ' pending' : '');
   const pendingNote = (item) => (item.pending ? '<span class="pending-note">⏳ placeholder: will be filled from CV</span>' : '');
   const stagger = (i) => `style="--d:${Math.min(i, 6) * 0.08}s"`;
+  const initials = (name) => esc(String(name || '').split(/[\s-]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase());
+
+  // Software logos for skill chips: first keyword match wins. Add a row to give a new tool a logo.
+  // color: brand colour, or null to use the text colour (for black logos).
+  const SOFTWARE = [
+    [/matlab|simulink/i, 'matlab', 'img'],
+    [/autocad/i, 'autocad', '#E51050'],
+    [/autodesk|inventor|vault|navisworks|advance steel|mep toolset|revit/i, 'autodesk', null],
+    [/solidworks|catia|abaqus|dassault|cswa/i, 'dassaultsystemes', null],
+    [/python/i, 'python', '#3776AB'],
+    [/c\+\+/i, 'cplusplus', '#00599C'],
+    [/jupyter/i, 'jupyter', '#F37626'],
+    [/javascript/i, 'javascript', '#F7DF1E']
+  ];
+  const softwareIcon = (name) => {
+    const hit = SOFTWARE.find(([re]) => re.test(name));
+    if (!hit) return '';
+    const [, slug, color] = hit;
+    if (color === 'img') return `<img class="sw" src="assets/icons/${slug}.svg" alt="">`;
+    const url = new URL(`assets/icons/${slug}.svg`, document.baseURI).href;
+    return `<i class="sw" style="--icon:url('${url}')${color ? `;--c:${color}` : ''}"></i>`;
+  };
+
+  const orgLogo = (name, logo, site) => {
+    const inner = logo ? `<img src="${safeUrl(logo)}" alt="${esc(name)} logo" loading="lazy">` : `<span>${initials(name)}</span>`;
+    return site ? `<a class="org-logo" href="${safeUrl(site)}"${ext(site)} title="${esc(name)}">${inner}</a>` : `<span class="org-logo">${inner}</span>`;
+  };
+
+  const gallery = (photos) => (photos && photos.length ? `<div class="gallery">${photos.map((ph) => {
+    const p = typeof ph === 'string' ? { src: ph } : ph;
+    return `<button type="button" class="shot" data-src="${safeUrl(p.src)}" data-caption="${esc(p.caption)}" aria-label="Open photo${p.caption ? `: ${esc(p.caption)}` : ''}">
+      <img src="${safeUrl(p.src)}" alt="${esc(p.caption)}" loading="lazy"></button>`;
+  }).join('')}</div>` : '');
+
+  // One timeline card, shared by experience and education
+  const timelineCard = (x, i, title, org, meta, list) => `
+      <article class="tl-item reveal" ${stagger(i)}>
+        <div class="card${pending(x)}">
+          <div class="card-head">
+            ${orgLogo(org, x.logo, x.website)}
+            <div class="card-head-text">
+              <div class="card-top"><h3>${esc(title)}</h3><span class="dates">${dates(x.start, x.end)}</span></div>
+              <p class="org">${esc(org)}</p>
+              ${meta ? `<p class="meta">${esc(meta)}</p>` : ''}
+            </div>
+          </div>
+          ${x.summary ? `<p>${esc(x.summary)}</p>` : ''}
+          ${bullets(list)}${gallery(x.photos)}${tags(x.tags)}${pendingNote(x)}
+        </div>
+      </article>`;
 
   // ---------- Section renderers ----------
   const render = {
-    experience: (items) => `<div class="timeline"><span class="timeline-line"></span>${items.map((x, i) => `
-      <article class="tl-item reveal" ${stagger(i)}>
-        <div class="card${pending(x)}">
-          <div class="card-top"><h3>${esc(x.role)}</h3><span class="dates">${dates(x.start, x.end)}</span></div>
-          <p class="org">${esc(x.company)}</p>
-          ${x.location ? `<p class="meta">${esc(x.location)}</p>` : ''}
-          ${x.summary ? `<p>${esc(x.summary)}</p>` : ''}
-          ${bullets(x.bullets)}${tags(x.tags)}${pendingNote(x)}
-        </div>
-      </article>`).join('')}</div>`,
+    experience: (items) => `<div class="timeline"><span class="timeline-line"></span>${items.map((x, i) =>
+      timelineCard(x, i, x.role, x.company, x.location, x.bullets)).join('')}</div>`,
 
-    education: (items) => `<div class="timeline"><span class="timeline-line"></span>${items.map((x, i) => `
-      <article class="tl-item reveal" ${stagger(i)}>
-        <div class="card${pending(x)}">
-          <div class="card-top"><h3>${esc(x.degree)}</h3><span class="dates">${dates(x.start, x.end)}</span></div>
-          <p class="org">${esc(x.institution)}</p>
-          ${x.location || x.grade ? `<p class="meta">${esc([x.location, x.grade].filter(Boolean).join(' · '))}</p>` : ''}
-          ${bullets(x.details)}${tags(x.tags)}${pendingNote(x)}
-        </div>
-      </article>`).join('')}</div>`,
+    education: (items) => `<div class="timeline"><span class="timeline-line"></span>${items.map((x, i) =>
+      timelineCard(x, i, x.degree, x.institution, [x.location, x.grade].filter(Boolean).join(' · '), x.details)).join('')}</div>`,
 
     portfolio: (items) => `<div class="grid">${items.map((x, i) => {
       const links = `<div class="links">
@@ -71,10 +106,10 @@
       <section class="card reveal${pending(g)}" ${stagger(gi)}>
         <h3>${esc(g.group)}</h3>
         ${(g.items || []).filter((s) => typeof s === 'string').length
-          ? `<div class="chips">${g.items.filter((s) => typeof s === 'string').map((s, i) => `<span class="chip" style="--d:${0.05 + i * 0.05}s">${esc(s)}</span>`).join('')}</div>` : ''}
+          ? `<div class="chips">${g.items.filter((s) => typeof s === 'string').map((s, i) => `<span class="chip" style="--d:${0.05 + i * 0.05}s">${softwareIcon(s)}${esc(s)}</span>`).join('')}</div>` : ''}
         ${(g.items || []).filter((s) => typeof s === 'object').map((s, i) => {
           const lvl = Math.max(1, Math.min(5, Number(s.level) || 3));
-          return `<div class="skill"><div class="skill-row"><span>${esc(s.name)}</span><span>${LEVELS[lvl]}</span></div>
+          return `<div class="skill"><div class="skill-row"><span>${softwareIcon(s.name)}${esc(s.name)}</span><span>${LEVELS[lvl]}</span></div>
             <div class="bar" role="img" aria-label="${esc(s.name)}: ${LEVELS[lvl]}"><i style="--w:${lvl * 20}%;--d:${0.1 + i * 0.08}s"></i></div></div>`;
         }).join('')}
         ${pendingNote(g)}
@@ -94,6 +129,8 @@
   // ---------- Profile / hero ----------
   function renderProfile(p) {
     document.querySelectorAll('[data-bind]').forEach((el) => { el.textContent = p[el.dataset.bind] || ''; });
+    const photo = $('#heroPhoto');
+    if (p.photo) { photo.src = p.photo; photo.alt = `Portrait of ${p.name || ''}`; } else { photo.closest('.hero-photo').remove(); }
     const links = p.links || {};
     const social = [];
     if (links.github) social.push(['github', links.github, 'GitHub']);
@@ -234,6 +271,21 @@
     card.style.setProperty('--my', `${e.clientY - r.top}px`);
   });
 
+  // ---------- Photo lightbox ----------
+  function initLightbox() {
+    const box = $('#lightbox'), img = $('#lightboxImg'), cap = $('#lightboxCaption');
+    let last = null;
+    const close = () => { box.classList.remove('open'); box.setAttribute('aria-hidden', 'true'); last && last.focus(); };
+    document.addEventListener('click', (e) => {
+      const shot = e.target.closest && e.target.closest('.shot');
+      if (shot) {
+        last = shot; img.src = shot.dataset.src; img.alt = shot.dataset.caption || ''; cap.textContent = shot.dataset.caption || '';
+        box.classList.add('open'); box.setAttribute('aria-hidden', 'false'); $('#lightboxClose').focus();
+      } else if (e.target === box || e.target.closest('#lightboxClose')) close();
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && box.classList.contains('open')) close(); });
+  }
+
   // ---------- Theme ----------
   function initTheme() {
     const root = document.documentElement;
@@ -250,6 +302,7 @@
 
   // ---------- Boot ----------
   initTheme();
+  initLightbox();
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   fetch('data/cv.json', { cache: 'no-cache' })

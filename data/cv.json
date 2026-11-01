@@ -17,17 +17,35 @@
       "linkedin": "https://www.linkedin.com/in/ahmedareeb401/"
     },
     "highlights": [
-      { "value": 3, "suffix": " yrs", "label": "Carbon-capture hardware" },
-      { "value": 30, "suffix": " tCO₂/yr", "label": "DAC plant delivered on time and on budget" },
-      { "value": 10, "suffix": "×", "label": "Lower energy use, Gen-2 DAC" },
-      { "value": 13, "suffix": "", "label": "Engineers led" }
-    ]
+      {
+        "value": 3,
+        "suffix": " yrs",
+        "label": "Carbon-capture hardware"
+      },
+      {
+        "value": 30,
+        "suffix": " tCO₂/yr",
+        "label": "DAC plant delivered on time and on budget"
+      },
+      {
+        "value": 10,
+        "suffix": "×",
+        "label": "Lower energy use, Gen-2 DAC"
+      },
+      {
+        "value": 13,
+        "suffix": "",
+        "label": "Engineers led"
+      }
+    ],
+    "photo": "assets/profile.jpg"
   },
-
   "experience": [
     {
       "role": "Systems Engineer (Working Student)",
       "company": "Greenlyte Carbon Technologies",
+      "logo": "assets/logos/greenlyte.png",
+      "website": "https://greenlyte.tech",
       "location": "Essen, Germany",
       "start": "May 2026",
       "end": "Present",
@@ -37,11 +55,21 @@
         "Set up Autodesk Vault as the PDM system for custom and standard parts.",
         "Integrated Vault with the company PLM and ERP systems through an Inventor dashboard and agentic workflows, keeping CAD and ERP data in sync and shortening design-to-execution time."
       ],
-      "tags": ["Electrolysis", "CFD", "SimScale", "Inventor", "Vault", "PLM/ERP"]
+      "tags": [
+        "Electrolysis",
+        "CFD",
+        "SimScale",
+        "Inventor",
+        "Vault",
+        "PLM/ERP"
+      ],
+      "photos": []
     },
     {
       "role": "Head of Product Design",
       "company": "Octavia Carbon",
+      "logo": "assets/logos/octavia-carbon.png",
+      "website": "https://www.octaviacarbon.com",
       "location": "Nairobi, Kenya",
       "start": "Mar 2025",
       "end": "Sep 2025",
@@ -52,11 +80,19 @@
         "Halved machine cost from Gen 1 to Gen 2 by simplifying the design and reducing part count, eliminating or replacing components.",
         "Moved the design platform to Autodesk and introduced PLM/PDM practices for DAC reactors, including ERP and Vault integration."
       ],
-      "tags": ["Direct Air Capture", "Leadership", "Design to cost", "PLM/PDM"]
+      "tags": [
+        "Direct Air Capture",
+        "Leadership",
+        "Design to cost",
+        "PLM/PDM"
+      ],
+      "photos": []
     },
     {
       "role": "Lead Mechanical Design Engineer",
       "company": "Octavia Carbon",
+      "logo": "assets/logos/octavia-carbon.png",
+      "website": "https://www.octaviacarbon.com",
       "location": "Nairobi, Kenya",
       "start": "Mar 2024",
       "end": "Mar 2025",
@@ -68,11 +104,21 @@
         "Applied DFMA by incorporating feedback from fabrication technicians; coordinated with the civil EPC and used Navisworks for clash detection.",
         "Managed mechanical installation and commissioning, completed within 3 weeks."
       ],
-      "tags": ["ASME VIII Div 1", "ASME B31.3 / B31.1", "Vacuum", "Plant 3D", "Navisworks", "DFMA"]
+      "tags": [
+        "ASME VIII Div 1",
+        "ASME B31.3 / B31.1",
+        "Vacuum",
+        "Plant 3D",
+        "Navisworks",
+        "DFMA"
+      ],
+      "photos": []
     },
     {
       "role": "Thermo-Fluids Engineer",
       "company": "Octavia Carbon",
+      "logo": "assets/logos/octavia-carbon.png",
+      "website": "https://www.octaviacarbon.com",
       "location": "Nairobi, Kenya",
       "start": "Jul 2023",
       "end": "Mar 2024",
@@ -83,11 +129,20 @@
         "Sourced specialised components through suppliers and industry experts (TLV, Spirax Sarco).",
         "Built Python (CoolProp) tools to model energy and steam demand of heat-integration options, e.g. heat pumps and heat and pressure losses in piping."
       ],
-      "tags": ["Heat exchangers", "ANSYS Fluent", "ASHRAE", "Python", "CoolProp"]
+      "tags": [
+        "Heat exchangers",
+        "ANSYS Fluent",
+        "ASHRAE",
+        "Python",
+        "CoolProp"
+      ],
+      "photos": []
     },
     {
       "role": "Mechanical Engineering Intern",
       "company": "Weld-Con Engineering",
+      "logo": "",
+      "website": "",
       "location": "Mombasa, Kenya",
       "start": "Jun 2022",
       "end": "Aug 2022",
@@ -96,33 +151,44 @@
         "Carried out dye-penetrant weld inspections on steam and process lines for an oil refinery.",
         "Produced as-built piping isometrics for a palm oil refinery to support change management."
       ],
-      "tags": ["API 650", "Weld inspection", "Piping isometrics"]
+      "tags": [
+        "API 650",
+        "Weld inspection",
+        "Piping isometrics"
+      ],
+      "photos": []
     }
   ],
-
   "education": [
     {
       "degree": "M.Sc. Automotive Engineering",
       "institution": "RWTH Aachen University",
+      "logo": "assets/logos/rwth-aachen.png",
+      "website": "https://www.rwth-aachen.de",
       "location": "Aachen, Germany",
       "start": "Oct 2025",
       "end": "Present",
       "grade": "Grade 1.7 (German scale)",
-      "details": ["Coursework completed; master's thesis to follow."],
-      "tags": []
+      "details": [
+        "Coursework completed; master's thesis to follow."
+      ],
+      "tags": [],
+      "photos": []
     },
     {
       "degree": "B.Sc. Mechanical Engineering",
       "institution": "University of Nairobi",
+      "logo": "assets/logos/university-of-nairobi.png",
+      "website": "https://www.uonbi.ac.ke",
       "location": "Nairobi, Kenya",
       "start": "Sep 2018",
       "end": "Jul 2023",
       "grade": "First Class Honours (GPA 3.7)",
       "details": [],
-      "tags": []
+      "tags": [],
+      "photos": []
     }
   ],
-
   "portfolio": [
     {
       "featured": true,
@@ -130,37 +196,114 @@
       "description": "Thermodynamics & fluids, structural, electrical and ASME calculations as Python packages, notebooks and a web app.",
       "url": "https://github.com/areebahmed401/aa-engineering-toolkit",
       "image": "assets/aa-logo-dark.svg",
-      "tags": ["Python", "Thermodynamics", "Structural", "Electrical", "ASME", "Web app"]
+      "tags": [
+        "Python",
+        "Thermodynamics",
+        "Structural",
+        "Electrical",
+        "ASME",
+        "Web app"
+      ]
     },
     {
       "title": "Gen 1 DAC Reactor (US patent pending)",
       "description": "A 30 tCO₂/year Direct Air Capture reactor designed at Octavia Carbon, built to ASME VIII Div 1 for deep-vacuum operation.",
-      "tags": ["Direct Air Capture", "Pressure vessel", "Patent pending"]
+      "tags": [
+        "Direct Air Capture",
+        "Pressure vessel",
+        "Patent pending"
+      ]
     },
     {
       "title": "Solar Toolkit",
       "description": "Solar sizing toolkit for photovoltaic system design.",
       "url": "https://github.com/areebahmed401/solar-toolkit",
-      "tags": ["JavaScript", "Solar PV", "Sustainability"]
+      "tags": [
+        "JavaScript",
+        "Solar PV",
+        "Sustainability"
+      ]
     },
     {
       "title": "Engineering Toolkit (v1)",
       "description": "The original engineering toolkit for mechanical engineering calculations.",
       "url": "https://github.com/areebahmed401/Engineering-Toolkit",
-      "tags": ["Python", "Mechanical"]
+      "tags": [
+        "Python",
+        "Mechanical"
+      ]
     }
   ],
-
   "skills": [
-    { "group": "Mechanical Design (CAD)", "items": ["Autodesk Inventor", "SolidWorks", "Siemens NX", "CATIA", "AutoCAD Plant 3D", "Advance Steel", "MEP Toolset", "Navisworks"] },
-    { "group": "Simulation (CFD / FEA)", "items": ["ANSYS Fluent", "Abaqus", "SimScale", "CAESAR II"] },
-    { "group": "PDM / PLM", "items": ["Autodesk Vault", "PLM/ERP integration", "Revision control", "DFMA"] },
-    { "group": "Standards", "items": ["ASME Section VIII Div 1", "ASME B31.1", "ASME B31.3", "API 650", "ASHRAE Handbook"] },
-    { "group": "Programming", "items": ["Python (CoolProp)", "MATLAB", "Simulink", "C++"] },
-    { "group": "Other", "items": ["P&ID", "MS Project", "Microsoft Office"] },
-    { "group": "Languages", "items": ["English (fluent)", "German (A2)", "Swahili", "Urdu", "Punjabi"] }
+    {
+      "group": "Mechanical Design (CAD)",
+      "items": [
+        "Autodesk Inventor",
+        "SolidWorks",
+        "Siemens NX",
+        "CATIA",
+        "AutoCAD Plant 3D",
+        "Advance Steel",
+        "MEP Toolset",
+        "Navisworks"
+      ]
+    },
+    {
+      "group": "Simulation (CFD / FEA)",
+      "items": [
+        "ANSYS Fluent",
+        "Abaqus",
+        "SimScale",
+        "CAESAR II"
+      ]
+    },
+    {
+      "group": "PDM / PLM",
+      "items": [
+        "Autodesk Vault",
+        "PLM/ERP integration",
+        "Revision control",
+        "DFMA"
+      ]
+    },
+    {
+      "group": "Standards",
+      "items": [
+        "ASME Section VIII Div 1",
+        "ASME B31.1",
+        "ASME B31.3",
+        "API 650",
+        "ASHRAE Handbook"
+      ]
+    },
+    {
+      "group": "Programming",
+      "items": [
+        "Python (CoolProp)",
+        "MATLAB",
+        "Simulink",
+        "C++"
+      ]
+    },
+    {
+      "group": "Other",
+      "items": [
+        "P&ID",
+        "MS Project",
+        "Microsoft Office"
+      ]
+    },
+    {
+      "group": "Languages",
+      "items": [
+        "English (fluent)",
+        "German (A2)",
+        "Swahili",
+        "Urdu",
+        "Punjabi"
+      ]
+    }
   ],
-
   "accolades": [
     {
       "title": "US Patent Pending",

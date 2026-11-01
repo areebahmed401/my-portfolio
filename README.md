@@ -60,6 +60,20 @@ When a job ends, change `"Present"` to the end date.
 **New software or skill:** add a name to a group's `"items"` list in `"skills"`, e.g. `"items": ["Autodesk Inventor", "New Software"]`.
 If you prefer a proficiency bar instead of a tag, use `{ "name": "New Software", "level": 4 }`, where the level runs from 1 (Basic) to 5 (Expert).
 
+### Photos and logos
+
+- **Work photos:** put images in `assets/photos/` (JPG, about 1600px wide is plenty), then list them in that job's `"photos"`. They show as a gallery that opens full-screen on click:
+  ```json
+  "photos": [
+    { "src": "assets/photos/octavia-dac-plant.jpg", "caption": "Commissioning the 30 tCO₂/yr DAC plant" }
+  ]
+  ```
+- **Company or university logo:** save a square PNG in `assets/logos/` and set `"logo": "assets/logos/name.png"` (plus `"website"` to make it clickable). With no logo, the company's initials are shown on a gold tile.
+- **Software logos** appear automatically on skill tags for Autodesk, AutoCAD, Dassault (SolidWorks, CATIA, Abaqus), MATLAB/Simulink, Python, C++, Jupyter and JavaScript. To add another, drop its SVG in `assets/icons/` and add a line to the `SOFTWARE` list at the top of `js/main.js`.
+- **Profile photo:** `profile.photo` (currently `assets/profile.jpg`).
+
+The check also fails if a photo or logo path points to a file that doesn't exist.
+
 **Headline numbers** in the hero are under `profile.highlights`. **Typed job titles** are under `profile.roles`.
 
 **Download CV button:** put the PDF at `assets/Areeb_Ahmed_CV.pdf` and set `"cvPdf": "assets/Areeb_Ahmed_CV.pdf"`.

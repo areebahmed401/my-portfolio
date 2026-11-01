@@ -13,7 +13,13 @@ REQUIRED = {
     "skills": ["group", "items"],
     "accolades": ["title"],
 }
-LIST_FIELDS = ["bullets", "details", "tags", "items"]
+LIST_FIELDS = ["bullets", "details", "tags", "items", "photos"]
+ROOT = CV.parent.parent
+
+
+def missing_file(path):
+    """True if a local (non-URL) path does not exist in the repo."""
+    return bool(path) and not path.startswith(("http://", "https://")) and not (ROOT / path).is_file()
 
 
 def main() -> int:
@@ -28,6 +34,8 @@ def main() -> int:
     profile = data.get("profile")
     if not isinstance(profile, dict) or not profile.get("name"):
         errors.append('profile: "name" is required')
+    elif missing_file(profile.get("photo")):
+        errors.append(f'profile: photo not found: {profile["photo"]}')
 
     for section, fields in REQUIRED.items():
         entries = data.get(section, [])
@@ -49,6 +57,11 @@ def main() -> int:
                 url = entry.get(f)
                 if url and not url.startswith(("https://", "http://", "mailto:")):
                     errors.append(f'{where}: "{f}" should start with https://')
+            local = [entry.get("logo"), entry.get("image")]
+            local += [p if isinstance(p, str) else (p or {}).get("src") for p in entry.get("photos", []) if isinstance(entry.get("photos"), list)]
+            for path in local:
+                if missing_file(path):
+                    errors.append(f'{where}: file not found: {path}')
             if entry.get("pending"):
                 errors.append(f"{where}: still marked as placeholder (\"pending\": true)")
 
