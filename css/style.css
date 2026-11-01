@@ -410,3 +410,5 @@ i.sw {
   background: rgba(255,255,255,.1); color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer;
 }
 .lightbox-close:hover { background: var(--gold); color: var(--ink); }
+.gallery:has(.shot:only-child) { grid-template-columns: minmax(0, 460px); }
+.shot:only-child { aspect-ratio: 16 / 7; }

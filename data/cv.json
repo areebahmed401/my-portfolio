@@ -86,7 +86,12 @@
         "Design to cost",
         "PLM/PDM"
       ],
-      "photos": []
+      "photos": [
+        {
+          "src": "assets/photos/octavia-phase0-site.jpg",
+          "caption": "Octavia Phase 0 Site: the 30 tCO₂/yr DAC plant"
+        }
+      ]
     },
     {
       "role": "Lead Mechanical Design Engineer",
@@ -136,12 +141,17 @@
         "Python",
         "CoolProp"
       ],
-      "photos": []
+      "photos": [
+        {
+          "src": "assets/photos/octavia-site-visit.jpg",
+          "caption": "Site visit at Octavia Carbon by people from the climate and carbon-removal space"
+        }
+      ]
     },
     {
       "role": "Mechanical Engineering Intern",
       "company": "Weld-Con Engineering",
-      "logo": "",
+      "logo": "assets/logos/weld-con.png",
       "website": "",
       "location": "Mombasa, Kenya",
       "start": "Jun 2022",
@@ -156,7 +166,20 @@
         "Weld inspection",
         "Piping isometrics"
       ],
-      "photos": []
+      "photos": [
+        {
+          "src": "assets/photos/weldcon-oil-tanks.jpg",
+          "caption": "Storage tanks erected on site for crude palm oil and refined products"
+        },
+        {
+          "src": "assets/photos/weldcon-steel-qc.jpg",
+          "caption": "QC: element-composition test on imported stainless steel sheet"
+        },
+        {
+          "src": "assets/photos/weldcon-tank-welding.jpg",
+          "caption": "Welding of smaller tank shells"
+        }
+      ]
     }
   ],
   "education": [
