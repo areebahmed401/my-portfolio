@@ -13,7 +13,7 @@
   const TABS = [
     { id: 'experience', label: 'Work Experience', intro: 'Roles, responsibilities and impact.' },
     { id: 'education', label: 'Education', intro: 'Degrees and academic background.' },
-    { id: 'portfolio', label: 'Portfolio', intro: 'Engineering software I have designed and built.' },
+    { id: 'portfolio', label: 'Portfolio', intro: 'Climate-tech hardware and engineering software I have designed and built.' },
     { id: 'skills', label: 'Skills & Software', intro: 'Tools and software I work with.' },
     { id: 'accolades', label: 'Accolades', intro: 'Awards, certificates and honours.' }
   ];
@@ -70,7 +70,9 @@
     skills: (groups) => `<div class="skill-groups">${groups.map((g, gi) => `
       <section class="card reveal${pending(g)}" ${stagger(gi)}>
         <h3>${esc(g.group)}</h3>
-        ${(g.items || []).map((s, i) => {
+        ${(g.items || []).filter((s) => typeof s === 'string').length
+          ? `<div class="chips">${g.items.filter((s) => typeof s === 'string').map((s, i) => `<span class="chip" style="--d:${0.05 + i * 0.05}s">${esc(s)}</span>`).join('')}</div>` : ''}
+        ${(g.items || []).filter((s) => typeof s === 'object').map((s, i) => {
           const lvl = Math.max(1, Math.min(5, Number(s.level) || 3));
           return `<div class="skill"><div class="skill-row"><span>${esc(s.name)}</span><span>${LEVELS[lvl]}</span></div>
             <div class="bar" role="img" aria-label="${esc(s.name)}: ${LEVELS[lvl]}"><i style="--w:${lvl * 20}%;--d:${0.1 + i * 0.08}s"></i></div></div>`;
@@ -105,7 +107,23 @@
     if (p.cvPdf) cta.push(`<a class="btn btn-ghost" href="${safeUrl(p.cvPdf)}" download>${ICONS.download} Download CV</a>`);
     $('#heroCta').innerHTML = cta.join('');
     $('#year').textContent = new Date().getFullYear();
+    renderStats(p.highlights || []);
     typeRoles(p.roles && p.roles.length ? p.roles : [p.title || '']);
+  }
+
+  function renderStats(list) {
+    const el = $('#stats');
+    if (!list.length) { el.remove(); return; }
+    el.innerHTML = list.map((h) => `<div class="stat"><strong><span class="count" data-to="${Number(h.value) || 0}">${reduceMotion ? esc(h.value) : 0}</span>${esc(h.suffix)}</strong><span class="stat-label">${esc(h.label)}</span></div>`).join('');
+    if (reduceMotion) return;
+    setTimeout(() => el.querySelectorAll('.count').forEach((c) => {
+      const to = Number(c.dataset.to), t0 = performance.now(), dur = 1600;
+      (function step(t) {
+        const k = Math.min(1, (t - t0) / dur);
+        c.textContent = Math.round(to * (1 - Math.pow(1 - k, 3)));
+        if (k < 1) requestAnimationFrame(step);
+      })(t0);
+    }), 1000);
   }
 
   function typeRoles(roles) {

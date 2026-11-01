@@ -4,45 +4,121 @@
     "title": "Mechanical Engineer",
     "roles": [
       "Mechanical Engineer",
-      "Engineering Software Builder",
-      "Python for Engineering"
+      "Direct Air Capture (DAC) Hardware",
+      "Carbon Capture & Sustainability",
+      "Pressure Vessels · Piping · CFD"
     ],
-    "location": "Germany",
-    "summary": "Mechanical engineer with an interest in building software-based engineering solutions.",
-    "email": "",
+    "location": "Aachen, Germany",
+    "summary": "Mechanical engineer with 3 years of experience designing, building and scaling carbon-capture hardware from concept to commissioning. Driven by climate tech: Direct Air Capture, electrolysis and sustainable energy systems.",
+    "email": "ahmedareeb401@gmail.com",
     "cvPdf": "",
     "links": {
       "github": "https://github.com/areebahmed401",
       "linkedin": "https://www.linkedin.com/in/ahmedareeb401/"
-    }
+    },
+    "highlights": [
+      { "value": 3, "suffix": " yrs", "label": "Carbon-capture hardware" },
+      { "value": 30, "suffix": " tCO₂/yr", "label": "DAC plant delivered on time and on budget" },
+      { "value": 10, "suffix": "×", "label": "Lower energy use, Gen-2 DAC" },
+      { "value": 13, "suffix": "", "label": "Engineers led" }
+    ]
   },
 
   "experience": [
     {
-      "pending": true,
-      "role": "Job title",
-      "company": "Company name",
-      "location": "City, Country",
-      "start": "MMM YYYY",
+      "role": "Systems Engineer (Working Student)",
+      "company": "Greenlyte Carbon Technologies",
+      "location": "Essen, Germany",
+      "start": "May 2026",
       "end": "Present",
       "bullets": [
-        "Key achievement or responsibility",
-        "Another achievement, ideally with a number"
+        "Building a CFD model in SimScale to determine pressure drop across a novel electrolyzer stack for CO₂ release.",
+        "Designing the CO₂ desorption skid of the single-cell plant in Autodesk Inventor for flexible operating points and cell prototyping, using a self-developed custom piping add-in.",
+        "Set up Autodesk Vault as the PDM system for custom and standard parts.",
+        "Integrated Vault with the company PLM and ERP systems through an Inventor dashboard and agentic workflows, keeping CAD and ERP data in sync and shortening design-to-execution time."
       ],
-      "tags": ["Skill", "Tool"]
+      "tags": ["Electrolysis", "CFD", "SimScale", "Inventor", "Vault", "PLM/ERP"]
+    },
+    {
+      "role": "Head of Product Design",
+      "company": "Octavia Carbon",
+      "location": "Nairobi, Kenya",
+      "start": "Mar 2025",
+      "end": "Sep 2025",
+      "bullets": [
+        "Led a 13-person multidisciplinary engineering team (process, electrical, mechanical) responsible for commercial-scale DAC engineering.",
+        "Scaled DAC systems from design to commercial deployment within cost and technical targets; delivered a 30 tCO₂/year plant on time and on budget.",
+        "Reduced energy consumption of Gen-2 systems by 10×.",
+        "Halved machine cost from Gen 1 to Gen 2 by simplifying the design and reducing part count, eliminating or replacing components.",
+        "Moved the design platform to Autodesk and introduced PLM/PDM practices for DAC reactors, including ERP and Vault integration."
+      ],
+      "tags": ["Direct Air Capture", "Leadership", "Design to cost", "PLM/PDM"]
+    },
+    {
+      "role": "Lead Mechanical Design Engineer",
+      "company": "Octavia Carbon",
+      "location": "Nairobi, Kenya",
+      "start": "Mar 2024",
+      "end": "Mar 2025",
+      "bullets": [
+        "Led mechanical design of the first-of-a-kind (FOAK) DAC plant.",
+        "Designed Gen 1 and Gen 2 DAC reactor structures to ASME Section VIII Div 1 for deep-vacuum operation, including bolted joints and gaskets for leak tightness.",
+        "Acted as piping engineer for the DAC pilot plant: designed instrument air, steam and condensate piping in AutoCAD Plant 3D to ASME B31.3 and B31.1, and selected and installed piping and plant equipment.",
+        "Acted as systems integrator for electrical components (cable routing, sensor placement).",
+        "Applied DFMA by incorporating feedback from fabrication technicians; coordinated with the civil EPC and used Navisworks for clash detection.",
+        "Managed mechanical installation and commissioning, completed within 3 weeks."
+      ],
+      "tags": ["ASME VIII Div 1", "ASME B31.3 / B31.1", "Vacuum", "Plant 3D", "Navisworks", "DFMA"]
+    },
+    {
+      "role": "Thermo-Fluids Engineer",
+      "company": "Octavia Carbon",
+      "location": "Nairobi, Kenya",
+      "start": "Jul 2023",
+      "end": "Mar 2024",
+      "bullets": [
+        "Designed and built thermal systems and custom heat exchangers for heating and cooling of sorbent filters; improved heat-exchanger performance by 15% through experimental testing and CFD validation.",
+        "Designed air intake and exhaust using ANSYS Fluent and ASHRAE principles, tripling the capture capacity of the same-generation machine and reducing reactor pressure drop by 1.5×.",
+        "Ran parametric CFD studies (ANSYS Fluent) to verify and optimise heating and cooling systems.",
+        "Sourced specialised components through suppliers and industry experts (TLV, Spirax Sarco).",
+        "Built Python (CoolProp) tools to model energy and steam demand of heat-integration options, e.g. heat pumps and heat and pressure losses in piping."
+      ],
+      "tags": ["Heat exchangers", "ANSYS Fluent", "ASHRAE", "Python", "CoolProp"]
+    },
+    {
+      "role": "Mechanical Engineering Intern",
+      "company": "Weld-Con Engineering",
+      "location": "Mombasa, Kenya",
+      "start": "Jun 2022",
+      "end": "Aug 2022",
+      "bullets": [
+        "Supported fabrication, erection and maintenance of API 650 storage tanks.",
+        "Carried out dye-penetrant weld inspections on steam and process lines for an oil refinery.",
+        "Produced as-built piping isometrics for a palm oil refinery to support change management."
+      ],
+      "tags": ["API 650", "Weld inspection", "Piping isometrics"]
     }
   ],
 
   "education": [
     {
-      "pending": true,
-      "degree": "Degree, field of study",
-      "institution": "University name",
-      "location": "City, Country",
-      "start": "YYYY",
-      "end": "YYYY",
-      "grade": "",
-      "details": ["Thesis, focus area or highlight"],
+      "degree": "M.Sc. Automotive Engineering",
+      "institution": "RWTH Aachen University",
+      "location": "Aachen, Germany",
+      "start": "Oct 2025",
+      "end": "Present",
+      "grade": "Grade 1.7 (German scale)",
+      "details": ["Coursework completed; master's thesis to follow."],
+      "tags": []
+    },
+    {
+      "degree": "B.Sc. Mechanical Engineering",
+      "institution": "University of Nairobi",
+      "location": "Nairobi, Kenya",
+      "start": "Sep 2018",
+      "end": "Jul 2023",
+      "grade": "First Class Honours (GPA 3.7)",
+      "details": [],
       "tags": []
     }
   ],
@@ -57,10 +133,15 @@
       "tags": ["Python", "Thermodynamics", "Structural", "Electrical", "ASME", "Web app"]
     },
     {
+      "title": "Gen 1 DAC Reactor (US patent pending)",
+      "description": "A 30 tCO₂/year Direct Air Capture reactor designed at Octavia Carbon, built to ASME VIII Div 1 for deep-vacuum operation.",
+      "tags": ["Direct Air Capture", "Pressure vessel", "Patent pending"]
+    },
+    {
       "title": "Solar Toolkit",
       "description": "Solar sizing toolkit for photovoltaic system design.",
       "url": "https://github.com/areebahmed401/solar-toolkit",
-      "tags": ["JavaScript", "Solar PV", "Sizing"]
+      "tags": ["JavaScript", "Solar PV", "Sustainability"]
     },
     {
       "title": "Engineering Toolkit (v1)",
@@ -71,30 +152,45 @@
   ],
 
   "skills": [
-    {
-      "group": "Programming & Data",
-      "items": [
-        { "name": "Python", "level": 4 },
-        { "name": "Jupyter", "level": 4 },
-        { "name": "JavaScript", "level": 3 }
-      ]
-    },
-    {
-      "pending": true,
-      "group": "CAD / CAE software",
-      "items": [
-        { "name": "Software name", "level": 3 }
-      ]
-    }
+    { "group": "Mechanical Design (CAD)", "items": ["Autodesk Inventor", "SolidWorks", "Siemens NX", "CATIA", "AutoCAD Plant 3D", "Advance Steel", "MEP Toolset", "Navisworks"] },
+    { "group": "Simulation (CFD / FEA)", "items": ["ANSYS Fluent", "Abaqus", "SimScale", "CAESAR II"] },
+    { "group": "PDM / PLM", "items": ["Autodesk Vault", "PLM/ERP integration", "Revision control", "DFMA"] },
+    { "group": "Standards", "items": ["ASME Section VIII Div 1", "ASME B31.1", "ASME B31.3", "API 650", "ASHRAE Handbook"] },
+    { "group": "Programming", "items": ["Python (CoolProp)", "MATLAB", "Simulink", "C++"] },
+    { "group": "Other", "items": ["P&ID", "MS Project", "Microsoft Office"] },
+    { "group": "Languages", "items": ["English (fluent)", "German (A2)", "Swahili", "Urdu", "Punjabi"] }
   ],
 
   "accolades": [
     {
-      "pending": true,
-      "title": "Award or certificate",
-      "issuer": "Issuing organisation",
-      "date": "YYYY",
-      "description": "One line on what it was for."
+      "title": "US Patent Pending",
+      "issuer": "Gen 1 30 tCO₂/yr DAC reactor",
+      "date": "",
+      "description": "Direct Air Capture reactor developed at Octavia Carbon."
+    },
+    {
+      "title": "ASME ISHOW Expert",
+      "issuer": "ASME",
+      "date": "2024",
+      "description": ""
+    },
+    {
+      "title": "Certified SolidWorks Associate (CSWA)",
+      "issuer": "Dassault Systèmes",
+      "date": "",
+      "description": ""
+    },
+    {
+      "title": "MATLAB & Simulink Certified",
+      "issuer": "MathWorks",
+      "date": "",
+      "description": ""
+    },
+    {
+      "title": "First Class Honours",
+      "issuer": "University of Nairobi",
+      "date": "2023",
+      "description": "B.Sc. Mechanical Engineering, GPA 3.7."
     }
   ]
 }
