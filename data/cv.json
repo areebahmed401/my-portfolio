@@ -149,6 +149,29 @@
       ]
     },
     {
+      "role": "Research Scholar",
+      "company": "Kenya Space Agency",
+      "logo": "assets/logos/kenya-space-agency.png",
+      "website": "https://ksa.go.ke",
+      "location": "Nairobi, Kenya",
+      "start": "Jan 2022",
+      "end": "Jul 2023",
+      "bullets": [
+        "Team lead of the structure and thermal subsystem for a 3U nanosatellite, from design to manufacture.",
+        "Designed the satellite structure in SolidWorks to withstand harsh space conditions, both structurally and thermally.",
+        "Verified the designs with ANSYS thermal and structural analysis."
+      ],
+      "tags": [
+        "Nanosatellite",
+        "SolidWorks",
+        "ANSYS",
+        "Structural",
+        "Thermal",
+        "Manufacturing"
+      ],
+      "photos": []
+    },
+    {
       "role": "Mechanical Engineering Intern",
       "company": "Weld-Con Engineering",
       "logo": "assets/logos/weld-con.png",
