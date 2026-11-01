@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Areeb Ahmed | Mechanical Engineer</title>
+  <meta name="description" content="Areeb Ahmed: mechanical engineer building software-based engineering solutions. Experience, education, portfolio, skills and accolades.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Apply saved theme before paint to avoid a flash
+    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#experience" aria-label="Home">
+      <img src="assets/aa-logo-dark.svg" alt="" width="36" height="36">
+      <span class="brand-name" data-bind="name"></span>
+    </a>
+    <div class="topbar-actions">
+      <nav class="social" id="social" aria-label="Profiles"></nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+        <span class="sun"></span><span class="moon"></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <img class="hero-logo" src="assets/aa-logo-dark.svg" alt="AA logo" width="88" height="88">
+      <p class="eyebrow" data-bind="location"></p>
+      <h1 class="hero-name" data-bind="name"></h1>
+      <p class="hero-role"><span id="typed"></span><span class="caret" aria-hidden="true"></span></p>
+      <p class="hero-summary" data-bind="summary"></p>
+      <div class="hero-cta" id="heroCta"></div>
+    </div>
+    <a class="scroll-cue" href="#tabs" aria-label="Scroll to content"><span></span></a>
+  </section>
+
+  <main id="tabs">
+    <div class="tabbar-wrap">
+      <div class="tabbar" role="tablist" id="tabbar">
+        <span class="tab-indicator" id="tabIndicator" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="panels" id="panels"></div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span data-bind="name"></span> · Built with plain HTML, CSS &amp; JS · <a href="https://github.com/areebahmed401/my-portfolio">Source</a></p>
+  </footer>
+
+  <noscript><p class="noscript">This site needs JavaScript to display the CV content.</p></noscript>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

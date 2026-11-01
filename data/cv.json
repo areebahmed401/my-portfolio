@@ -1,0 +1,100 @@
+{
+  "profile": {
+    "name": "Areeb Ahmed",
+    "title": "Mechanical Engineer",
+    "roles": [
+      "Mechanical Engineer",
+      "Engineering Software Builder",
+      "Python for Engineering"
+    ],
+    "location": "Germany",
+    "summary": "Mechanical engineer with an interest in building software-based engineering solutions.",
+    "email": "",
+    "cvPdf": "",
+    "links": {
+      "github": "https://github.com/areebahmed401",
+      "linkedin": "https://www.linkedin.com/in/ahmedareeb401/"
+    }
+  },
+
+  "experience": [
+    {
+      "pending": true,
+      "role": "Job title",
+      "company": "Company name",
+      "location": "City, Country",
+      "start": "MMM YYYY",
+      "end": "Present",
+      "bullets": [
+        "Key achievement or responsibility",
+        "Another achievement, ideally with a number"
+      ],
+      "tags": ["Skill", "Tool"]
+    }
+  ],
+
+  "education": [
+    {
+      "pending": true,
+      "degree": "Degree, field of study",
+      "institution": "University name",
+      "location": "City, Country",
+      "start": "YYYY",
+      "end": "YYYY",
+      "grade": "",
+      "details": ["Thesis, focus area or highlight"],
+      "tags": []
+    }
+  ],
+
+  "portfolio": [
+    {
+      "featured": true,
+      "title": "AA Engineering Toolkit",
+      "description": "Thermodynamics & fluids, structural, electrical and ASME calculations as Python packages, notebooks and a web app.",
+      "url": "https://github.com/areebahmed401/aa-engineering-toolkit",
+      "image": "assets/aa-logo-dark.svg",
+      "tags": ["Python", "Thermodynamics", "Structural", "Electrical", "ASME", "Web app"]
+    },
+    {
+      "title": "Solar Toolkit",
+      "description": "Solar sizing toolkit for photovoltaic system design.",
+      "url": "https://github.com/areebahmed401/solar-toolkit",
+      "tags": ["JavaScript", "Solar PV", "Sizing"]
+    },
+    {
+      "title": "Engineering Toolkit (v1)",
+      "description": "The original engineering toolkit for mechanical engineering calculations.",
+      "url": "https://github.com/areebahmed401/Engineering-Toolkit",
+      "tags": ["Python", "Mechanical"]
+    }
+  ],
+
+  "skills": [
+    {
+      "group": "Programming & Data",
+      "items": [
+        { "name": "Python", "level": 4 },
+        { "name": "Jupyter", "level": 4 },
+        { "name": "JavaScript", "level": 3 }
+      ]
+    },
+    {
+      "pending": true,
+      "group": "CAD / CAE software",
+      "items": [
+        { "name": "Software name", "level": 3 }
+      ]
+    }
+  ],
+
+  "accolades": [
+    {
+      "pending": true,
+      "title": "Award or certificate",
+      "issuer": "Issuing organisation",
+      "date": "YYYY",
+      "description": "One line on what it was for."
+    }
+  ]
+}
