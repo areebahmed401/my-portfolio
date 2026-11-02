@@ -35,8 +35,13 @@
   // color: brand colour, or null to use the text colour (for black logos).
   const SOFTWARE = [
     [/matlab|simulink/i, 'matlab', 'img'],
-    [/autocad/i, 'autocad', '#E51050'],
-    [/autodesk|inventor|vault|navisworks|advance steel|mep toolset|revit/i, 'autodesk', null],
+    // Official Autodesk product icons (full colour). Plant 3D and MEP are AutoCAD toolsets.
+    [/inventor/i, 'inventor', 'img'],
+    [/vault/i, 'vault', 'img'],
+    [/navisworks/i, 'navisworks', 'img'],
+    [/advance steel/i, 'advance-steel', 'img'],
+    [/autocad|plant 3d|mep toolset/i, 'autocad-product', 'img'],
+    [/autodesk|revit/i, 'autodesk', null],
     [/solidworks|catia|abaqus|dassault|cswa/i, 'dassaultsystemes', null],
     [/python/i, 'python', '#3776AB'],
     [/c\+\+/i, 'cplusplus', '#00599C'],
@@ -108,7 +113,10 @@
           </div></article>`;
       }
       const cover = x.image ? `<a class="project-cover" href="${safeUrl(x.demo || x.url || x.image)}"${ext(x.demo || x.url || '')}><img src="${safeUrl(x.image)}" alt="${esc(x.title)} screenshot" loading="lazy"></a>` : '';
-      return `<article class="card project reveal" ${stagger(i)}>${cover}<h3>${esc(x.title)}</h3><p>${esc(x.description)}</p>${tags(x.tags)}${links}</article>`;
+      const head = x.logo
+        ? `<div class="project-head"><span class="org-logo"><img src="${safeUrl(x.logo)}" alt="${esc(x.title)} logo" loading="lazy"></span><h3>${esc(x.title)}</h3></div>`
+        : `<h3>${esc(x.title)}</h3>`;
+      return `<article class="card project reveal" ${stagger(i)}>${cover}${head}<p>${esc(x.description)}</p>${tags(x.tags)}${links}</article>`;
     }).join('')}</div>`,
 
     skills: (groups) => `<div class="skill-groups">${groups.map((g, gi) => `

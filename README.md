@@ -52,7 +52,7 @@ When a job ends, change `"Present"` to the end date.
 { "title": "Award name", "issuer": "Organisation", "date": "2027", "description": "One line on what it was for.", "url": "" }
 ```
 
-**New project** → `"portfolio"` (add `"featured": true` to make it the big card at the top). Add `"demo"` for a live link; a code project with a repo `"url"` but no `"demo"` is shown under **Archived** automatically.
+**New project** → `"portfolio"` (add `"featured": true` to make it the big card at the top). Add `"logo"` for a small logo tile and `"demo"` for a live link; a code project with a repo `"url"` but no `"demo"` is shown under **Archived** automatically.
 ```json
 { "title": "Project", "description": "One or two lines.", "url": "https://github.com/areebahmed401/repo", "tags": ["Python"] }
 ```
@@ -69,7 +69,7 @@ If you prefer a proficiency bar instead of a tag, use `{ "name": "New Software",
   ]
   ```
 - **Company or university logo:** save a square PNG in `assets/logos/` and set `"logo": "assets/logos/name.png"` (plus `"website"` to make it clickable). With no logo, the company's initials are shown on a gold tile.
-- **Software logos** appear automatically on skill tags for Autodesk, AutoCAD, Dassault (SolidWorks, CATIA, Abaqus), MATLAB/Simulink, Python, C++, Jupyter and JavaScript. To add another, drop its SVG in `assets/icons/` and add a line to the `SOFTWARE` list at the top of `js/main.js`.
+- **Software logos** appear automatically on skill tags: official Autodesk product icons for Inventor, Vault, Navisworks, Advance Steel and AutoCAD (also used for the Plant 3D and MEP toolsets), plus Dassault (SolidWorks, CATIA, Abaqus), MATLAB/Simulink, Python, C++, Jupyter and JavaScript. To add another, drop its SVG in `assets/icons/` and add a line to the `SOFTWARE` list at the top of `js/main.js`.
 - **Profile photo:** `profile.photo` (currently `assets/profile.jpg`).
 
 The check also fails if a photo or logo path points to a file that doesn't exist.

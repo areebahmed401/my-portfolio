@@ -257,17 +257,31 @@
       "description": "My personal German study app, built as a scrollable road from A1 to C1: grammar lessons, 2,000+ everyday words grouped by 25 places in German life, Anki-style flashcards, a daily quiz with adaptive difficulty and a verbformen-style translator.",
       "url": "https://github.com/areebahmed401/learning-german",
       "demo": "https://areebahmed401.github.io/learning-german/",
-      "image": "assets/photos/deutschweg.jpg",
+      "image": "assets/logos/deutschweg.svg",
       "tags": [
         "JavaScript",
         "Spaced repetition",
         "Goethe-aligned",
         "Language learning"
+      ],
+      "featured": true
+    },
+    {
+      "title": "GCT Tools: Autodesk Inventor add-in",
+      "logo": "assets/icons/inventor.svg",
+      "description": "An Inventor add-in I built at Greenlyte Carbon Technologies to make piping design simpler and connect CAD to ERP: a custom piping tool for skid design, plus an Inventor dashboard that keeps CAD, Vault and ERP data in sync and shortens design-to-execution time.",
+      "tags": [
+        "Autodesk Inventor",
+        "Add-in",
+        "Piping design",
+        "Vault",
+        "ERP integration",
+        "Automation"
       ]
     },
     {
       "title": "Gen 1 DAC Reactor (US patent pending)",
-      "description": "A 30 tCO₂/year Direct Air Capture reactor designed at Octavia Carbon, built to ASME VIII Div 1 for deep-vacuum operation.",
+      "description": "A 30 tCO₂/year Direct Air Capture reactor designed at Octavia Carbon, built to ASME VIII Div 1 for deep-vacuum operation. Much of the design can't be shown here because it is protected IP.",
       "tags": [
         "Direct Air Capture",
         "Pressure vessel",
@@ -275,15 +289,18 @@
       ]
     },
     {
-      "title": "Solar Toolkit",
-      "description": "Solar sizing toolkit for photovoltaic system design.",
+      "title": "HelEOS Solar Toolkit (final-year project)",
+      "description": "My final-year B.Sc. project at the University of Nairobi: a web app that sizes a home or workplace for solar and gives a quote from local suppliers in the Kenyan market.",
       "url": "https://github.com/areebahmed401/solar-toolkit",
       "tags": [
-        "JavaScript",
+        "React",
         "Solar PV",
-        "Sustainability"
+        "Sizing",
+        "Sustainability",
+        "Final-year project"
       ],
-      "demo": "https://myrepo-xi-two.vercel.app/"
+      "demo": "https://myrepo-xi-two.vercel.app/",
+      "logo": "assets/logos/heleos.png"
     }
   ],
   "skills": [
