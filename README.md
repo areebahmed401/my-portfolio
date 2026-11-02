@@ -52,7 +52,7 @@ When a job ends, change `"Present"` to the end date.
 { "title": "Award name", "issuer": "Organisation", "date": "2027", "description": "One line on what it was for.", "url": "" }
 ```
 
-**New project** → `"portfolio"` (add `"featured": true` to make it the big card at the top)
+**New project** → `"portfolio"` (add `"featured": true` to make it the big card at the top). Add `"demo"` for a live link; a code project with a repo `"url"` but no `"demo"` is shown under **Archived** automatically.
 ```json
 { "title": "Project", "description": "One or two lines.", "url": "https://github.com/areebahmed401/repo", "tags": ["Python"] }
 ```

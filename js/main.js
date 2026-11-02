@@ -88,7 +88,15 @@
     education: (items) => `<div class="timeline"><span class="timeline-line"></span>${items.map((x, i) =>
       timelineCard(x, i, x.degree, x.institution, [x.location, x.grade].filter(Boolean).join(' · '), x.details)).join('')}</div>`,
 
-    portfolio: (items) => `<div class="grid">${items.map((x, i) => {
+    // Code projects with a repo but no live demo go under "Archived"
+    portfolio: (items) => {
+      const archived = (x) => !x.featured && x.url && !x.demo;
+      const live = items.filter((x) => !archived(x)), old = items.filter(archived);
+      return render.projects(live) + (old.length
+        ? `<h3 class="subhead">Archived</h3><p class="subhead-note">Earlier projects without a live demo.</p>${render.projects(old, 'archived')}` : '');
+    },
+
+    projects: (items, extra = '') => `<div class="grid ${extra}">${items.map((x, i) => {
       const links = `<div class="links">
         ${x.url ? `<a href="${safeUrl(x.url)}"${ext(x.url)}>${ICONS.github.replace('<svg', '<svg width="16" height="16" fill="currentColor"')} View repo <span class="arrow">→</span></a>` : ''}
         ${x.demo ? `<a href="${safeUrl(x.demo)}"${ext(x.demo)}>Live demo <span class="arrow">→</span></a>` : ''}

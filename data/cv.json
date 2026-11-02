@@ -249,7 +249,8 @@
         "Electrical",
         "ASME",
         "Web app"
-      ]
+      ],
+      "demo": "https://areebahmed401.github.io/aa-engineering-toolkit/"
     },
     {
       "title": "Deutschweg: learning German, A1 → C1",
@@ -281,16 +282,8 @@
         "JavaScript",
         "Solar PV",
         "Sustainability"
-      ]
-    },
-    {
-      "title": "Engineering Toolkit (v1)",
-      "description": "The original engineering toolkit for mechanical engineering calculations.",
-      "url": "https://github.com/areebahmed401/Engineering-Toolkit",
-      "tags": [
-        "Python",
-        "Mechanical"
-      ]
+      ],
+      "demo": "https://myrepo-xi-two.vercel.app/"
     }
   ],
   "skills": [
