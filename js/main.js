@@ -201,14 +201,14 @@
     const tabs = TABS.filter((t) => Array.isArray(data[t.id]) && data[t.id].length);
     tabs.forEach((t) => {
       const b = document.createElement('button');
-      b.className = 'tab'; b.type = 'button'; b.id = `tab-${t.id}`;
+      b.className = `tab tab-${t.id}`; b.type = 'button'; b.id = `tab-${t.id}`;
       b.setAttribute('role', 'tab'); b.setAttribute('aria-controls', `panel-${t.id}`);
       b.textContent = t.label; b.dataset.id = t.id;
       b.addEventListener('click', () => select(t.id, true));
       tabbar.appendChild(b);
 
       const s = document.createElement('section');
-      s.className = 'panel'; s.id = `panel-${t.id}`;
+      s.className = 'panel'; s.id = `panel-${t.id}`; s.dataset.sec = t.id;
       s.setAttribute('role', 'tabpanel'); s.setAttribute('aria-labelledby', b.id);
       s.innerHTML = `<div class="panel-head"><h2>${esc(t.label)}</h2><p>${esc((data.intros || {})[t.id] || t.intro)}</p></div>${render[t.id](data[t.id])}`;
       panels.appendChild(s);
@@ -238,6 +238,7 @@
       b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
     });
     document.querySelectorAll('.panel').forEach((p) => p.classList.toggle('active', p.id === `panel-${id}`));
+    $('#tabs').dataset.sec = id; // tab indicator takes the section colour
     moveIndicator();
     if (userAction) {
       history.replaceState(null, '', `#${id}`);
@@ -274,9 +275,46 @@
     });
   }
 
+  // Hero stays pinned (sticky) while the content sheet slides up over it; the hero fades, shrinks and blurs.
+  // Its sticky top is negative when it is taller than the screen, so it pins only once its bottom is in view.
+  function pinHero() {
+    const hero = $('#hero');
+    hero.style.top = `${Math.min(0, innerHeight - hero.offsetHeight)}px`;
+  }
+
+  function heroFx() {
+    if (reduceMotion) return;
+    const hero = $('#hero'), inner = $('.hero-inner');
+    const start = Math.max(0, hero.offsetHeight - innerHeight);
+    const p = Math.max(0, Math.min(1, (scrollY - start) / (innerHeight * 0.85)));
+    inner.style.opacity = String(1 - p);
+    inner.style.transform = p ? `translateY(${-40 * p}px) scale(${1 - 0.08 * p})` : '';
+    inner.style.filter = p ? `blur(${6 * p}px)` : '';
+    $('.blueprint').style.opacity = String(1 - 0.6 * p);
+  }
+
+  let ticking = false;
   function onScroll() {
-    $('#topbar').classList.toggle('scrolled', scrollY > 40);
-    drawTimelines();
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      $('#topbar').classList.toggle('scrolled', scrollY > 40);
+      drawTimelines();
+      heroFx();
+      ticking = false;
+    });
+  }
+
+  // Blueprint lines draw themselves once on load
+  function drawBlueprint() {
+    const bp = $('.blueprint');
+    if (!bp || reduceMotion) return;
+    bp.querySelectorAll('.ink > *').forEach((el, i) => {
+      el.setAttribute('pathLength', '1');
+      el.style.setProperty('--bd', `${(i % 12) * 0.12}s`);
+    });
+    bp.classList.add('drawing');
+    setTimeout(() => { bp.classList.replace('drawing', 'drawn'); bp.querySelectorAll('.ink > *').forEach((el) => el.removeAttribute('pathLength')); }, 4500);
   }
 
   // Cursor-follow glow on portfolio cards
@@ -320,6 +358,9 @@
   // ---------- Boot ----------
   initTheme();
   initLightbox();
+  drawBlueprint();
+  pinHero();
+  addEventListener('resize', () => { pinHero(); onScroll(); });
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   fetch('data/cv.json', { cache: 'no-cache' })
