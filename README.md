@@ -1,7 +1,7 @@
 # my-portfolio
 
 Personal CV website of **Areeb Ahmed**, a mechanical engineer working on Direct Air Capture and carbon-capture hardware.
-It is plain HTML, CSS and JS in the AA brand, hosted on GitHub Pages.
+It is plain HTML, CSS and JS with a Carbon Green theme, hosted on GitHub Pages.
 
 **Live:** https://areebahmed401.github.io/my-portfolio/
 
@@ -95,9 +95,9 @@ python scripts/validate_cv.py
 ```
 index.html                 page shell
 data/cv.json               all content
-css/style.css              AA theme + animations
+css/style.css              Carbon Green theme + animations
 js/main.js                 renders cv.json into the tabs
-assets/                    AA logo, favicon
+assets/                    monogram, toolkit logo, photos, logos, icons
 scripts/validate_cv.py     data check (runs in CI)
 .github/workflows/pages.yml  validate → deploy to Pages
 ```

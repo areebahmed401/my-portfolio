@@ -99,7 +99,8 @@
             <div><span class="badge">Featured</span><h3>${esc(x.title)}</h3><p>${esc(x.description)}</p>${tags(x.tags)}${links}</div>
           </div></article>`;
       }
-      return `<article class="card project reveal" ${stagger(i)}><h3>${esc(x.title)}</h3><p>${esc(x.description)}</p>${tags(x.tags)}${links}</article>`;
+      const cover = x.image ? `<a class="project-cover" href="${safeUrl(x.demo || x.url || x.image)}"${ext(x.demo || x.url || '')}><img src="${safeUrl(x.image)}" alt="${esc(x.title)} screenshot" loading="lazy"></a>` : '';
+      return `<article class="card project reveal" ${stagger(i)}>${cover}<h3>${esc(x.title)}</h3><p>${esc(x.description)}</p>${tags(x.tags)}${links}</article>`;
     }).join('')}</div>`,
 
     skills: (groups) => `<div class="skill-groups">${groups.map((g, gi) => `
